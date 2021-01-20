@@ -8,7 +8,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const result = weight / (height * height);
+    const result = parseFloat(weight / (height * height)).toFixed(1);
     setBmi(result);
     // also setBmiweight / (height * height);
   }
@@ -17,7 +17,7 @@ function App() {
     <div className="container" style={{marginTop: 30}}>
     <form onSubmit={handleSubmit}>
       <div>
-        <h2>Calculatin body mass index</h2>
+        <h2>Calculating body mass index</h2>
         <label>Height</label>
         <input type="number" value={height} onChange={e => setHeight(e.target.value)} />
       </div>
